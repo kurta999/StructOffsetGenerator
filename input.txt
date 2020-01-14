@@ -1,0 +1,47 @@
+typedef struct
+{
+  uint16_t pump_on_off_state[15];
+  uint32_t pump_moto_seconds;  /**< This is my comment */
+  uint32_t pump_turn_on;  /**< Pump turn on count */
+  uint32_t tube_seconds;  /**< Tube moto seconds */
+  int16_t mcu_min;
+  int16_t mcu_max;
+  int16_t mcu_avg;
+  uint64_t elapsed_ticks;
+  struct
+  {
+    int16_t rdx_mcu_min;
+    int16_t rdx_mcu_max;
+    int16_t rdx_mcu_avg;
+    int16_t rdx_mcu_avg2;
+  } rdx[3];
+  struct
+  {
+    int16_t ph_factory_offset;
+    int16_t ph_factory_gain;
+    int16_t ph_user_offset;
+  } ph[2];
+  uint64_t time_elapsed;
+  struct
+  {
+    int16_t simple_struct;
+  } s_struct;
+  uint64_t time_elapsed2
+} FirstStructure;
+
+#pragma pack(1)
+typedef struct{
+  int8_t min_core_temp;
+  int8_t max_core_temp;
+  int8_t avg_core_temp;
+  uint64_t channels[16];
+  uint16_t remaining_time
+} SecondStructure
+#pragma pack()
+
+#pragma pack(1)
+typedef struct{
+  uint8_t first_member;
+  uint8_t second_member
+} ThirdStructure
+#pragma pack()
